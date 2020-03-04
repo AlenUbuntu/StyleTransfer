@@ -1,5 +1,5 @@
 # StyleTransfer:
-An open-source image deep style transfer library. It provies implementations of current SOTA algorithms, including
+This is an PyTorch image deep style transfer library. It provies implementations of current SOTA algorithms, including
 
 * **AdaIN**
 
@@ -21,6 +21,14 @@ The original implementations can be found at [AdaIN](https://github.com/xunhuang
 [WCT](https://github.com/Yijunmaverick/UniversalStyleTransfer), 
 [LST](https://github.com/sunshineatnoon/LinearStyleTransfer) and [FSP](https://github.com/NVIDIA/FastPhotoStyle).
 
+With this library, as long as you can find your desired style images on web, you can edit your content image with different transferring effects.
+
+## Prerequisites 
+* Linux 
+* PyTorch 1.4.0/0.4.1
+* Nvidia-GPU and CUDA (for training only)
+
+To run LST, PyTorch 0.4.1 version is required. We recommend users to install it in an anaconda virtual environment, since lots of functions in PyTorch 0.4.1 is depricated. Details about setting and activating the virtual environment is [here]().
 
 ## Artistic Style Transfer
 ### Normal Style Transfer
