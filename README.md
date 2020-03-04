@@ -54,7 +54,7 @@ StyleTransfer Library also supports the transferring or synthesis of multiple st
 
 styleInterpWeights is the flag to specify interpolation weights, i.e., weight of each style image.
 
-**Note that only AdaIN and WCT supports style interpolation**
+**Note that currently only AdaIN and WCT supports style interpolation**
 
 ```sh
 python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --content /path/to/content_image --style /path/to/style1_image,/path/to/style2_image,... --styleInterpWeights 10,10,...
@@ -69,7 +69,7 @@ python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/adain_tes
 ### Artistic Spatial Control
 The one-click global transfer still does not meet requirements from professinal users (e.g., artists) in many cases. Users prefer to transfer different styles to different regions in the content image, i.e., spatial control. StyleTransfer Library supports this operation.
 
-**Note that only AdaIN and WCT supports spatial control**
+**Note that currently only AdaIN and WCT supports spatial control**
 
 ```sh
 python StyleTransfer/tools/test.py --config-file configs/xxx_test.yaml --content /path/to/content_image --style /path/to/style1_image,/path/to/style2_image --mask /path/to/mask_image
@@ -80,6 +80,16 @@ Here, we provide an example of transferring two styles to the foreground and bac
 ```sh
 python tools/test.py --config-file configs/wct_test.yaml --content demo/mask/spatial_content.jpg --style demo/mask/mask_1.jpg,demo/mask/mask_2.jpg --mask demo/mask/mask.png
 ```
+![](https://github.com/AlenUbuntu/StyleTransfer/blob/master/images/demo3.png)
 
 ### Photo-Realistic Style Transfer 
+For photo-realistic style transfer, we need to first compile the [pytorch_spn](https://github.com/Liusifei/pytorch_spn) module.
+```sh
+cd 
+```
+
 ### Photo-Realistic Spatial Control
+
+## TODO
+
+* support interpolation and spatial control for LST
