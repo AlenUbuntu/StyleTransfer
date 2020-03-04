@@ -1,0 +1,1 @@
+python tools/test.py --config-file configs/adain_test.yaml --content demo/content/1.jpg --style demo/style/11.jpg,demo/style/12.jpg,demo/style/1.jpg,demo/style/in3.jpg --styleInterpWeights 0,0,0,100

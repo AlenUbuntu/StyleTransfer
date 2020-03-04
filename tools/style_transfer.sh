@@ -1,0 +1,2 @@
+# python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/wct_test.yaml --contentDir demo/content --styleDir demo/style --mode 1
+python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/lst_test.yaml --contentDir demo/content --styleDir demo/style --mode 1

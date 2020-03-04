@@ -1,0 +1,12 @@
+INPUT_DIR: '/home/alan/Downloads/style_transfer'
+OUTPUT_DIR: '/home/alan/Downloads/style_transfer/WCT'
+MODEL_DIR: '/home/alan/Downloads/style_transfer'
+MODEL:
+    NAME: 'WCT'
+    # ALPHA: 0.6
+    ALPHA: 0.6
+    ENCODER_NAME: ('vgg19-pytorch', 'vgg_normalised_conv1_1', 'vgg_normalised_conv2_1', 'vgg_normalised_conv3_1', 'vgg_normalised_conv4_1', 'vgg_normalised_conv5_1')
+    DECODER_NAME: ('vgg19-pytorch', 'feature_invertor_conv1_1', 'feature_invertor_conv2_1', 'feature_invertor_conv3_1', 'feature_invertor_conv4_1', 'feature_invertor_conv5_1')
+DEVICE: 'cuda:1'
+INPUT:
+    FINE_SIZE: 512

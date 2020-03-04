@@ -1,0 +1,23 @@
+INPUT_DIR: '/home/alan/Downloads/style_transfer'
+INPUT_DIR: '/home/alan/Downloads/style_transfer'
+OUTPUT_DIR: '/home/alan/Downloads/style_transfer/LST/SPN'
+MODEL_DIR: '/home/alan/Downloads/style_transfer'
+MODEL:
+    NAME: 'LST'
+    ENCODER_NAME: ('lst', 'vgg_r41', 'vgg_r51')
+    DECODER_NAME: ('lst', 'lst_dec_r41')
+    PARTS: ('lst', 'lst_matrix_r41', 'lst_spn')
+    LST:
+        LAYER: 'r41'
+        MATRIX_SIZE: 32
+        STYLE_LAYERS: ("r11","r21","r31","r41")
+        CONTENT_LAYERS: 'r41'
+        STYLE_WEIGHT: 0.02
+        CONTENT_WEIGHT: 1.
+        SPN_NUM: 1
+        DISABLE_TRANSFER: False
+        LOAD_LOSS_NET: False
+        DISABLE_SPN: False
+DEVICE: 'cuda:0'
+INPUT: 
+    FINE_SIZE: 256

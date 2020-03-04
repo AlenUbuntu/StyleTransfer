@@ -1,0 +1,14 @@
+INPUT_DIR: '/home/alan/Downloads/style_transfer'
+OUTPUT_DIR: '/home/alan/Downloads/style_transfer/FPS/photo/fast'
+MODEL_DIR: '/home/alan/Downloads/style_transfer'
+MODEL:
+    NAME: 'FPS'
+    PARTS: ('fps_photo_wct',)
+    FPS:
+        R: 35
+        EPS: 0.001
+        BETA: 0.9999
+        FAST: True
+DEVICE: 'cuda:0'
+INPUT: 
+    FINE_SIZE: 512

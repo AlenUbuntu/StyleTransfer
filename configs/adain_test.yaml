@@ -1,0 +1,13 @@
+INPUT_DIR: '/home/alan/Downloads/style_transfer'
+OUTPUT_DIR: '/home/alan/Downloads/style_transfer/AdaIN'
+MODEL_DIR: '/home/alan/Downloads/style_transfer' 
+MODEL:
+    NAME: 'AdaIN'
+    ENCODER_NAME: ('vgg19-pytorch', 'vgg_normalised')
+    # DECODER_NAME: ('adain_decoder_github', )
+    DECODER_NAME: ('adain_decoder_ours', )
+    ALPHA: 1.0
+    ADAIN:
+        CONTENT_WEIGHT: 1.0
+        STYLE_WEIGHT: 10.0
+DEVICE: 'cuda:1'

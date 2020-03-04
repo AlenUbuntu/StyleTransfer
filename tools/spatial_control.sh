@@ -1,0 +1,2 @@
+# python tools/test.py --config-file configs/adain_test.yaml --content demo/mask/spatial_content.jpg --style demo/mask/mask_1.jpg,demo/mask/mask_2.jpg --mask demo/mask/mask.png
+python tools/test.py --config-file configs/wct_test.yaml --content demo/mask/spatial_content.jpg --style demo/mask/mask_1.jpg,demo/mask/mask_2.jpg --mask demo/mask/mask.png

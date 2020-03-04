@@ -1,0 +1,21 @@
+INPUT_DIR: '/home/alan/Downloads/style_transfer'
+OUTPUT_DIR: '/home/alan/Downloads/style_transfer'
+MODEL_DIR: '/home/alan/Downloads/style_transfer'
+MODEL:
+    NAME: 'AdaIN'
+    ENCODER_NAME: ('vgg19-pytorch', 'vgg_normalised')
+    DECODER_NAME: ('adain_decoder', )
+    ALPHA: 1.0
+    ADAIN:
+        CONTENT_WEIGHT: 1.0
+        STYLE_WEIGHT: 10.0
+OPTIMIZER:
+    BASE_LR: 1e-4
+    MAX_ITER: 160000
+DATALOADER:
+    BATCH_SIZE: 9
+    NUM_WORKERS: 4
+DATASET:
+    TRAIN: 'coco_artwiki_style_train'
+    TEST: 'coco_artwiki_style_test'
+DEVICE: 'cuda:0'
