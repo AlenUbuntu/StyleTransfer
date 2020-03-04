@@ -22,3 +22,13 @@ The original implementations can be found at [AdaIN](https://github.com/xunhuang
 [LST](https://github.com/sunshineatnoon/LinearStyleTransfer) and [FSP](https://github.com/NVIDIA/FastPhotoStyle).
 
 
+## Artistic Style Transfer
+### Normal Style Transfer
+
+### Style Interpolation (Artistic Only)
+
+### Spatial Control (Artistic)
+
+## Photo-Realistic Style Transfer 
+### Normal Style Transfer
+### Spatial Control
