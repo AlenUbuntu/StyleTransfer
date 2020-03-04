@@ -43,9 +43,8 @@ python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.
 ```python
 python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --contentDir path/to/content --styleDir path/to/style --mode 1
 ```
-  We assume the names of paired content and style images are same in this case.
-  
-  
+In the second case, we assume the names of paired content and style images are same.
+![](https://github.com/AlenUbuntu/StyleTransfer/blob/master/images/demo2.png)
 
 ### Style Interpolation (Artistic Only)
 
