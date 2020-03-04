@@ -37,7 +37,7 @@ Modify model settings in the coressponding yaml file (configs/xxx_test.yaml or c
 
 * For a single pair test
 ```sh
-python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --content path/to/content/image --style path/to/style/image
+python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --content path/to/content image --style path/to/style image
 ```
 * For large number of pair tests
 ```sh
@@ -49,7 +49,21 @@ Some examples are given as below:
 
 ![](https://github.com/AlenUbuntu/StyleTransfer/blob/master/images/demo2.png)
 
-### Style Interpolation (Artistic Only)
+### Artistic Style Interpolation
+StyleTransfer Library also supports the transferring or synthesis of multiple styles thourgh interpolation. 
+
+styleInterpWeights is the flat to specify interpolation weights, i.e., weight of each style image.
+
+```sh
+python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --content /path/to/content image --style /path/to/style1,/path/to/style2,... --styleInterpWeights 10,10,...
+```
+
+Below is an example of handling four styles.
+```sh
+python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/adain_test.yaml --content demo/content/1.jpg --style demo/style/11.jpg,demo/style/12.jpg,demo/style/1.jpg,demo/style/in3.jpg --styleInterpWeights 0,0,0,100
+```
+![](https://github.com/AlenUbuntu/StyleTransfer/blob/master/images/interpolation.png)
+
 
 ### Spatial Control (Artistic)
 
