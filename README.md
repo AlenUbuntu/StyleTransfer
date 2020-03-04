@@ -22,6 +22,7 @@ The original implementations can be found at [AdaIN](https://github.com/xunhuang
 [LST](https://github.com/sunshineatnoon/LinearStyleTransfer) and [FSP](https://github.com/NVIDIA/FastPhotoStyle).
 
 With this library, as long as you can find your desired style images on web, you can edit your content image with different transferring effects.
+![](https://github.com/AlenUbuntu/StyleTransfer/blob/master/images/demo1.png)
 
 ## Prerequisites 
 * Linux 
