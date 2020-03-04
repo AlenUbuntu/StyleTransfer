@@ -36,14 +36,17 @@ Modify model settings in the coressponding yaml file (configs/xxx_test.yaml or c
 ### Artisitc Style Transfer
 
 * For a single pair test
-```python
+```sh
 python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --content path/to/content/image --style path/to/style/image
 ```
 * For large number of pair tests
-```python
+```sh
 python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --contentDir path/to/content --styleDir path/to/style --mode 1
 ```
 In the second case, we assume the names of paired content and style images are same.
+
+Some examples are given as below:
+
 ![](https://github.com/AlenUbuntu/StyleTransfer/blob/master/images/demo2.png)
 
 ### Style Interpolation (Artistic Only)
