@@ -68,6 +68,7 @@ python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/adain_tes
 
 ### Artistic Spatial Control
 The one-click global transfer still does not meet requirements from professinal users (e.g., artists) in many cases. Users prefer to transfer different styles to different regions in the content image, i.e., spatial control. StyleTransfer Library supports this operation.
+
 **Note that only AdaIN and WCT supports spatial control**
 
 ```sh
