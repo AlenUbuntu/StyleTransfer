@@ -31,8 +31,21 @@ With this library, as long as you can find your desired style images on web, you
 
 To run LST, PyTorch 0.4.1 version is required. We recommend users to install it in an anaconda virtual environment, since lots of functions in PyTorch 0.4.1 is depricated. Details about setting and activating the virtual environment is [here]().
 
-## Artistic Style Transfer
-### Normal Style Transfer
+## Style Transfer
+Modify model settings in the coressponding yaml file (configs/xxx_test.yaml or configs/xxx_train.yaml). Note that lst_spn_train.yaml, lst_spn_test.yaml and fps_photo_test.yaml are for photo-realistic style transfer only.
+### Artisitc Style Transfer
+
+* For a single pair test
+```python
+python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --content path/to/content/image --style path/to/style/image
+```
+* For large number of pair tests
+```python
+python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --contentDir path/to/content --styleDir path/to/style --mode 1
+```
+  We assume the names of paired content and style images are same in this case.
+  
+  
 
 ### Style Interpolation (Artistic Only)
 
