@@ -94,6 +94,10 @@ python tools/test.py --config-file configs/wct_test.yaml --content demo/mask/spa
 ![](https://github.com/AlenUbuntu/StyleTransfer/blob/master/images/demo3.png)
 
 ### Photo-Realistic Style Transfer 
+FPS generally provides two inference modes: FPS-Fast and FPS-Slow. FPS-Slow utilizes the prpogator (photo smoothing) described in the paper which is computationally expensive and slow. FPS-Fast replace that propogator with Guided Filter proposed by Kaiming He. 
+
+**We found FPS-Fast shows a similar performance as FPS-Slow but is much faster**.
+
 * For a single pair test
 ```sh
 python StyleTransfer/tools/test_photorealistic.py --config-file StyleTransfer/configs/lst_spn_test.yaml --content path/to/content_image --style path/to/style_image [--resize]
@@ -112,6 +116,9 @@ or
 python StyleTransfer/tools/test_photorealistic.py --config-file StyleTransfer/configs/fps_photo_test.yaml --contentDir path/to/content --styleDir path/to/style --mode 1  [--resize]
 ```
 
+Some examples are given below:
+
+![](https://github.com/AlenUbuntu/StyleTransfer/blob/master/images/demo4.png)
 
 ### Photo-Realistic Spatial Control
 
