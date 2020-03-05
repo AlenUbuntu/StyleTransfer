@@ -28,6 +28,7 @@ With this library, as long as you can find your desired style images on web, you
 * Linux 
 * PyTorch 1.4.0/0.4.1
 * Nvidia-GPU and CUDA (for training only)
+* [Pretrained model](https://drive.google.com/file/d/19cMdnED0WhAmTQXFeh53agPesWf4GqSH/view?usp=sharing). Please download it and unzip the file to your preferred model dir and modify the model dir path accordingly in the configuration file.
 
 To run LST, PyTorch 0.4.1 version is required. We recommend users to install it in an anaconda virtual environment, since lots of functions in PyTorch 0.4.1 are deprecated. Details about setting and activating the virtual environment is [here]().
 
@@ -121,8 +122,21 @@ Some examples are given below:
 ![](https://github.com/AlenUbuntu/StyleTransfer/blob/master/images/demo4.png)
 
 ### Photo-Realistic Spatial Control
+Our library also supports spatial control for photo-realistic style transfer. Basically, information of a semantic region in the style image is transferred to the corresponding semantic region in the content image. 
+
+```sh
+python StyleTransfer/tools/test_photorealistic.py --config-file StyleTransfer/configs/lst_spn_test.yaml --content path/to/content_img --style path/to/style_img --content-seg /path/to/content_seg_img --style-seg /path/to/style_seg [--resize]
+```
+or 
+```sh
+python StyleTransfer/tools/test_photorealistic.py --config-file StyleTransfer/configs/fps_photo_test.yaml --content path/to/content_img --style path/to/style_img --content-seg /path/to/content_seg_img --style-seg /path/to/style_seg [--resize]
+```
+
+Below is an example:
+![](https://github.com/AlenUbuntu/StyleTransfer/blob/master/images/demo5.png)
 
 ## TODO
 
 * LST: support style interpolation and spatial control
 * WCT: support style interpolation
+* LST: support photo-realistic spatial control
