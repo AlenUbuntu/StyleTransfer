@@ -30,7 +30,20 @@ With this library, as long as you can find your desired style images on web, you
 * Nvidia-GPU and CUDA (for training only)
 * [Pretrained model](https://drive.google.com/file/d/19cMdnED0WhAmTQXFeh53agPesWf4GqSH/view?usp=sharing). Please download it and unzip the file to your preferred model dir and modify the model dir path accordingly in the configuration file.
 
-To run LST, PyTorch 0.4.1 version is required. We recommend users to install it in an anaconda virtual environment, since lots of functions in PyTorch 0.4.1 are deprecated. Details about setting and activating the virtual environment is [here]().
+To run LST, PyTorch 0.4.1 version is required. We recommend users to install it in an anaconda virtual environment, since lots of functions in PyTorch 0.4.1 are deprecated. Details about setting and activating the virtual environment is described as follows:
+
+1. First create your own anaconda virtual environment
+```ssh
+conda create -n your_env_name python=3.7
+```
+2. Then install necessary packages
+```ssh
+conda install pytorch=0.4.1 cuda92 -c pytorch
+pip install opencv-python
+conda install pillow=6.2.1
+conda install scipy
+pip install opencv--contrib-python
+```
 
 In addition, we need to compile the [pytorch_spn](https://github.com/Liusifei/pytorch_spn) module.
 ```sh
