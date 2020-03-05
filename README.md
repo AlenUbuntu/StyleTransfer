@@ -31,17 +31,27 @@ With this library, as long as you can find your desired style images on web, you
 
 To run LST, PyTorch 0.4.1 version is required. We recommend users to install it in an anaconda virtual environment, since lots of functions in PyTorch 0.4.1 are deprecated. Details about setting and activating the virtual environment is [here]().
 
+In addition, we need to compile the [pytorch_spn](https://github.com/Liusifei/pytorch_spn) module.
+```sh
+cd lib/SPN/pytorch_spn/
+sh make.sh
+cd ../../../
+```
+
 ## Style Transfer
 Modify model settings in the coressponding yaml file (configs/xxx_test.yaml or configs/xxx_train.yaml). Note that lst_spn_train.yaml, lst_spn_test.yaml and fps_photo_test.yaml are for photo-realistic style transfer only.
+
+```--resize``` flag below is optional that can accelerate computing and save memory.
+
 ### Artisitc Style Transfer
 
 * For a single pair test
 ```sh
-python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --content path/to/content_image --style path/to/style_image
+python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --content path/to/content_image --style path/to/style_image [--resize]
 ```
 * For large number of pair tests
 ```sh
-python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --contentDir path/to/content --styleDir path/to/style --mode 1
+python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --contentDir path/to/content --styleDir path/to/style --mode 1 [--resize]
 ```
 In the second case, we assume the names of paired content and style images are same.
 
@@ -54,10 +64,10 @@ StyleTransfer Library also supports the transferring or synthesis of multiple st
 
 styleInterpWeights is the flag to specify interpolation weights, i.e., weight of each style image.
 
-**Note that currently only AdaIN and WCT supports style interpolation**
+**Note that currently only AdaIN supports style interpolation**
 
 ```sh
-python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --content /path/to/content_image --style /path/to/style1_image,/path/to/style2_image,... --styleInterpWeights 10,10,...
+python StyleTransfer/tools/test.py --config-file StyleTransfer/configs/xxx_test.yaml --content /path/to/content_image --style /path/to/style1_image,/path/to/style2_image,... --styleInterpWeights 10,10,... [--resize]
 ```
 
 Below is an example of handling four styles.
@@ -72,24 +82,40 @@ The one-click global transfer still does not meet requirements from professinal 
 **Note that currently only AdaIN and WCT supports spatial control**
 
 ```sh
-python StyleTransfer/tools/test.py --config-file configs/xxx_test.yaml --content /path/to/content_image --style /path/to/style1_image,/path/to/style2_image --mask /path/to/mask_image
+python StyleTransfer/tools/test.py --config-file configs/xxx_test.yaml --content /path/to/content_image --style /path/to/style1_image,/path/to/style2_image --mask /path/to/mask_image [--resize]
 ```
 
 Here, we provide an example of transferring two styles to the foreground and background respectively, i.e., Style I for foreground (mask=1), Style II for background (mask=0), provided a binary mask.
 
 ```sh
+python tools/test.py --config-file configs/adain_test.yaml --content demo/mask/spatial_content.jpg --style demo/mask/mask_1.jpg,demo/mask/mask_2.jpg --mask demo/mask/mask.png
 python tools/test.py --config-file configs/wct_test.yaml --content demo/mask/spatial_content.jpg --style demo/mask/mask_1.jpg,demo/mask/mask_2.jpg --mask demo/mask/mask.png
 ```
 ![](https://github.com/AlenUbuntu/StyleTransfer/blob/master/images/demo3.png)
 
 ### Photo-Realistic Style Transfer 
-For photo-realistic style transfer, we need to first compile the [pytorch_spn](https://github.com/Liusifei/pytorch_spn) module.
+* For a single pair test
 ```sh
-cd 
+python StyleTransfer/tools/test_photorealistic.py --config-file StyleTransfer/configs/lst_spn_test.yaml --content path/to/content_image --style path/to/style_image [--resize]
 ```
+or 
+```sh
+python StyleTransfer/tools/test_photorealistic.py --config-file StyleTransfer/configs/fps_photo_test.yaml --content path/to/content_image --style path/to/style_image  [--resize]
+```
+
+* For large number of pair tests
+```sh
+python StyleTransfer/tools/test_photorealistic.py --config-file StyleTransfer/configs/lst_spn_test.yaml --contentDir path/to/content --styleDir path/to/style --mode 1 [--resize]
+```
+or 
+```sh
+python StyleTransfer/tools/test_photorealistic.py --config-file StyleTransfer/configs/fps_photo_test.yaml --contentDir path/to/content --styleDir path/to/style --mode 1  [--resize]
+```
+
 
 ### Photo-Realistic Spatial Control
 
 ## TODO
 
-* support interpolation and spatial control for LST
+* LST: support style interpolation and spatial control
+* WCT: support style interpolation
