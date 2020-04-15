@@ -153,3 +153,13 @@ Below is an example:
 * LST: support style interpolation and spatial control
 * WCT: support style interpolation
 * LST: support photo-realistic spatial control
+
+## Cite
+@misc{Alen2019,
+  author = {Yang Gao},
+  title = {PyTorch Style Transfer Library},
+  year = {2019},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/AlenUbuntu/StyleTransfer}},
+}
