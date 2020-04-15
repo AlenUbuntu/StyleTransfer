@@ -155,6 +155,8 @@ Below is an example:
 * LST: support photo-realistic spatial control
 
 ## Cite
+If you'd like to cite StyleTransfer in your paper, you can use this bibtex:
+```latex
 @misc{Alen2019,
   author = {Yang Gao},
   title = {PyTorch Style Transfer Library},
@@ -163,3 +165,4 @@ Below is an example:
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/AlenUbuntu/StyleTransfer}},
 }
+```
